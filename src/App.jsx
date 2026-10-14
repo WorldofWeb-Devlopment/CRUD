@@ -34,7 +34,7 @@ function App() {
     console.log(selectdUser);
     // setItem((prevItem)=>prevItem.map((user)=>user.id === editingId ? {...user,name}:user))
     setEditingId(id);
-    setIsDisabled(false)
+    setIsDisabled(id)
      
   }
   function handlesave() {
@@ -77,7 +77,7 @@ function App() {
               <td>
                 <button onClick={() => handleupdate(item.id)}>Update</button>
                 <button onClick={() => handledelete(item.id)}>Delete</button>
-                <button onClick={handlesave} disabled={isDisabled}>Save</button>
+                <button onClick={handlesave} disabled={isDisabled !== item.id}>Save</button>
               </td>
             </tr>
           ))}
